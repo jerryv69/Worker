@@ -49,7 +49,6 @@ namespace Worker {
         {
 
             // Ask the scheduler to schedule our EmailJob
-            Scheduler.ScheduleJob(_emailJobDetail, trigger); // Let's create a trigger that fires immediately
             ITrigger trigger = TriggerBuilder.Create()
 
                 // A description helps other people understand what you want
