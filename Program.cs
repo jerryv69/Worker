@@ -48,7 +48,7 @@ namespace Worker {
         public void Execute(IJobExecutionContext context) {
 
             // Let's start simple, write to the console
-            Console.WriteLine("Hello World!")
+            Console.WriteLine("Hello World!");
 
 
         }
