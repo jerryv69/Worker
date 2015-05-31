@@ -52,7 +52,7 @@ namespace Worker {
             ITrigger trigger = TriggerBuilder.Create()
 
                 // A description helps other people understand what you want
-                .WithDescription("Every 10 seconds")
+                .WithDescription("Every 60 seconds")
 
                 // A simple schedule is the easiest to build
                 // It takes an Action<SimpleScheduleBuilder>
@@ -61,7 +61,7 @@ namespace Worker {
                 .WithSimpleSchedule(x => x
 
                     // Here we specify the interval
-                    .WithIntervalInSeconds(10)
+                    .WithIntervalInSeconds(60)
 
                     // And how often to repeat it
                     .RepeatForever())
