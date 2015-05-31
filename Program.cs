@@ -83,7 +83,7 @@ namespace Worker {
         public void Execute(IJobExecutionContext context) {
 
             // Let's start simple, write to the console
-            Console.WriteLine("Hello World! " + DateTime.Now.ToString("h:mm:ss tt"));
+            Console.WriteLine("Hello World 60! " + DateTime.Now.ToString("h:mm:ss tt"));
         }
     }
 }
