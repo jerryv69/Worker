@@ -61,7 +61,7 @@ namespace Worker {
                 .WithSimpleSchedule(x => x
 
                     // Here we specify the interval
-                    .WithIntervalInSeconds(60)
+                    .WithIntervalInSeconds(3600)
 
                     // And how often to repeat it
                     .RepeatForever())
@@ -83,7 +83,7 @@ namespace Worker {
         public void Execute(IJobExecutionContext context) {
 
             // Let's start simple, write to the console
-            Console.WriteLine("Hello World 60! " + DateTime.Now.ToString("h:mm:ss tt"));
+            Console.WriteLine("Hello World 3600! " + DateTime.Now.ToString("h:mm:ss tt"));
         }
     }
 }
