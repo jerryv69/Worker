@@ -10,7 +10,7 @@ namespace Worker {
         private static IJobDetail _emailJobDetail;
 
         static Program() {
-
+            Console.WriteLine("Program"); 
             // Create a regular old Quartz scheduler
             SchedulerFactory = new StdSchedulerFactory();
             Scheduler = SchedulerFactory.GetScheduler();
@@ -18,6 +18,7 @@ namespace Worker {
         }
 
         static void Main(string[] args) {
+            Console.WriteLine("Main"); 
             
             // Now let's start our scheduler; you could perform
             // any processing or bootstrapping code here before
@@ -35,6 +36,7 @@ namespace Worker {
         }
 
         private static void CreateJob() {
+            Console.WriteLine("CreateJob"); 
 
             // The job builder uses a fluent interface to
             // make it easier to build and generate an
