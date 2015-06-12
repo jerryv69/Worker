@@ -16,3 +16,5 @@ F:\Dev\Worker\bin\Debug\Quartz.dll
 F:\Dev\Worker\bin\Debug\Common.Logging.xml
 F:\Dev\Worker\bin\Debug\Quartz.xml
 F:\Dev\Worker\obj\Debug\Worker.csprojResolveAssemblyReference.cache
+F:\Dev\Worker with MQ\obj\Debug\Worker.exe
+F:\Dev\Worker with MQ\obj\Debug\Worker.pdb
