@@ -7,9 +7,11 @@ namespace Worker {
     class Program {
         private static readonly ISchedulerFactory SchedulerFactory;
         private static readonly IScheduler Scheduler;
+
         private static IJobDetail _emailJobDetail;
 
         static Program() {
+
             Console.WriteLine("Program"); 
             // Create a regular old Quartz scheduler
             SchedulerFactory = new StdSchedulerFactory();
