@@ -91,6 +91,7 @@ namespace Worker {
 
         public  IRestResponse SendSimpleMessage()
         {
+            Console.WriteLine("SendSimpleMessage");
             String API_KEY = ConfigurationManager.AppSettings["MAILGUN_API_KEY"].ToString();
             Console.WriteLine(API_KEY);
             RestClient client = new RestClient();
