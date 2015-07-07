@@ -2,6 +2,9 @@
 using Quartz.Impl;
 using System.IO;
 using System;
+using System.Configuration;
+
+using RestSharp;
 
 namespace Worker {
     class Program {
@@ -77,15 +80,39 @@ namespace Worker {
         }
 
     }
-
+  
+    
     /// <summary>
     /// Our email job, yet to be implemented
     /// </summary>
     public class EmailJob : IJob {
+
+        public  IRestResponse SendSimpleMessage()
+        {
+            String API_KEY = ConfigurationSettings.AppSettings["MAILGUN_API_KEY"].ToString();
+
+            RestClient client = new RestClient();
+            client.BaseUrl = new Uri("https://api.mailgun.net/v2");
+            client.Authenticator =
+                    new HttpBasicAuthenticator("api",
+                                               API_KEY);
+            RestRequest request = new RestRequest();
+            request.AddParameter("domain",
+                                 "mailgun.org", ParameterType.UrlSegment);
+            request.Resource = "{domain}/messages";
+            request.AddParameter("from", "postmaster@appe7fa7d7479a84dd08016cbed777d8298.mailgun.org");
+            request.AddParameter("to", "jerry_villamizar@hotmail.com");
+            request.AddParameter("subject", "Hello");
+            request.AddParameter("text", "Testing some Mailgun awesomness!");
+            request.Method = Method.POST;
+            return client.Execute(request);
+        }
         public void Execute(IJobExecutionContext context) {
 
             // Let's start simple, write to the console
             Console.WriteLine("Hello World 3600! " + DateTime.Now.ToString("h:mm:ss tt"));
+
+            SendSimpleMessage();
         }
     }
 }
