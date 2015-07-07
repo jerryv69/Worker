@@ -113,8 +113,10 @@ namespace Worker {
 
             // Let's start simple, write to the console
             Console.WriteLine("Hello World 60! " + DateTime.Now.ToString("h:mm:ss tt"));
+            IRestResponse resp = SendSimpleMessage();
+            Console.WriteLine(resp.ErrorMessage);
+            Console.WriteLine(resp.ErrorException);
 
-            SendSimpleMessage();
         }
     }
 }
