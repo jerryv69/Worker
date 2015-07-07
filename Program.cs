@@ -68,7 +68,7 @@ namespace Worker {
                 .WithSimpleSchedule(x => x
 
                     // Here we specify the interval
-                    .WithIntervalInSeconds(3600)
+                    .WithIntervalInSeconds(60)
 
                     // And how often to repeat it
                     .RepeatForever())
