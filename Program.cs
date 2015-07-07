@@ -123,6 +123,7 @@ namespace Worker {
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException.Message);
 
             }
             Console.WriteLine("Hello World 60! Finished");
