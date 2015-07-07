@@ -92,7 +92,7 @@ namespace Worker {
         public  IRestResponse SendSimpleMessage()
         {
             String API_KEY = ConfigurationSettings.AppSettings["MAILGUN_API_KEY"].ToString();
-
+            Console.WriteLine(API_KEY);
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v2");
             client.Authenticator =
@@ -107,6 +107,7 @@ namespace Worker {
             request.AddParameter("subject", "Hello");
             request.AddParameter("text", "Testing some Mailgun awesomness!");
             request.Method = Method.POST;
+            Console.WriteLine("sending...");
             return client.Execute(request);
         }
         public void Execute(IJobExecutionContext context) {
@@ -116,7 +117,6 @@ namespace Worker {
             IRestResponse resp = SendSimpleMessage();
             Console.WriteLine(resp.ErrorMessage);
             Console.WriteLine(resp.ErrorException);
-
         }
     }
 }
