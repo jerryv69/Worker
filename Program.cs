@@ -99,7 +99,7 @@ namespace Worker {
                     new HttpBasicAuthenticator("api",
                                                API_KEY);
             RestRequest request = new RestRequest();
-            request.AddParameter("mailgun.org",
+            request.AddParameter("testapp-595.apphb.com",
                                  "smtp.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", "postmaster@appe7fa7d7479a84dd08016cbed777d8298.mailgun.org");
