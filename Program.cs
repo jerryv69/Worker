@@ -117,6 +117,8 @@ namespace Worker {
             try
             {
                 IRestResponse resp = SendSimpleMessage();
+                Console.WriteLine(resp.ResponseStatus);
+                Console.WriteLine(resp.StatusDescription);
                 Console.WriteLine(resp.ErrorMessage);
                 Console.WriteLine(resp.ErrorException);
             }
