@@ -92,9 +92,7 @@ namespace Worker {
         public  IRestResponse SendSimpleMessage()
         {
 
-            Console.WriteLine(ConfigurationManager.AppSettings.Get("MAILGUN_API_KEY") + "<<<<<<<<<<<<");
             String API_KEY = ConfigurationManager.AppSettings["MAILGUN_API_KEY"].ToString();
-            Console.WriteLine(API_KEY);
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v2");
             client.Authenticator =
@@ -102,7 +100,7 @@ namespace Worker {
                                                API_KEY);
             RestRequest request = new RestRequest();
             request.AddParameter("domain",
-                                 "mailgun.org", ParameterType.UrlSegment);
+                                 "smtp.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", "postmaster@appe7fa7d7479a84dd08016cbed777d8298.mailgun.org");
             request.AddParameter("to", "jerry_villamizar@hotmail.com");
