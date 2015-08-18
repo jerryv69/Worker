@@ -20,3 +20,4 @@ F:\Dev\Worker\bin\Debug\RestSharp.dll
 F:\Dev\Worker\bin\Debug\Common.Logging.pdb
 F:\Dev\Worker\bin\Debug\Quartz.pdb
 F:\Dev\Worker\bin\Debug\RestSharp.xml
+F:\Dev\Worker\bin\Debug\Worker.exe.config
